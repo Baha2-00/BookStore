@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<BookStoreDBContext>(cnn => cnn.UseSqlServer(builder.Configuration.GetConnectionString("sqlconnect")));
 
-builder.Services.AddDbContext<BookStoreDBContext>(cnn => cnn.UseMySQL(builder.Configuration.GetConnectionString("mysqlconnect")));
+//builder.Services.AddDbContext<BookStoreDBContext>(cnn => cnn.UseMySQL(builder.Configuration.GetConnectionString("mysqlconnect")));
 
 var app = builder.Build();
 

@@ -19,10 +19,9 @@
         public enum DepartmentType
         {
             Sales = 1,
-            Marketing = 2,
-            Inventory = 3,
+            مبيعات=2,
+            Marketing = 3,
             CustomerService = 4,
-            IT = 5
         }
         public enum SubscriptionType
         {

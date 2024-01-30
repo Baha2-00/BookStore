@@ -12,6 +12,6 @@ namespace BookStore.Models.Enitity
         public string PhoneNumber { get; set; }
         public DepartmentType DepartmentType { get; set; }
         public bool IsActive { get; set; }
-        public virtual List<Employee> Employees { get; set; }
+        public virtual List<Person> Employees { get; set; }
     }
 }

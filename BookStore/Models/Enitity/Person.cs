@@ -18,19 +18,20 @@ namespace BookStore.Models.Enitity
         public DateOnly birthDate { get; set; }
         public PersonType personType { get; set; }
         public bool IsActive { get; set; }
+        
+        //Relations
+        public virtual Department Department { get; set; }
+        public virtual Content Content { get; set; }
+        public virtual Subscription Subscrip { get; set; }
     }
     public class Admin : Person
     {
-
     }
     public class Employee : Person
     {
-        public virtual Department Department { get; set; }
     }
     public class Client : Person
     {
-        public virtual Content Content { get; set; }
-        public virtual Subscription Subscrip { get; set; }
     }
 
 }

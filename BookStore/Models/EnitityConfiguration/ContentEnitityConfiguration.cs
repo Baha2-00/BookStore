@@ -1,6 +1,7 @@
 ﻿using BookStore.Models.Enitity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using static BookStore.Helper.Enums.Enums;
 
 namespace BookStore.Models.EnitityConfiguration
 {
@@ -16,7 +17,6 @@ namespace BookStore.Models.EnitityConfiguration
             builder.ToTable(x => x.HasCheckConstraint("CH_Content_Description", "Description>=10"));
             builder.ToTable(x => x.HasCheckConstraint("CH_Content_Author", "Author>=5"));
             builder.Property(x => x.IsActive).HasDefaultValue(true);
-
         }
     }
 }

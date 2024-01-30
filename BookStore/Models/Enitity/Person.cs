@@ -15,7 +15,7 @@ namespace BookStore.Models.Enitity
         public int Age { get; set; }
         public string Specialization { get; set; }
         public string Gender { get; set; }
-        public DateOnly birthDate { get; set; }
+        public DateTime birthDate { get; set; }
         public PersonType personType { get; set; }
         public bool IsActive { get; set; }
         
@@ -23,15 +23,6 @@ namespace BookStore.Models.Enitity
         public virtual Department Department { get; set; }
         public virtual Content Content { get; set; }
         public virtual Subscription Subscrip { get; set; }
-    }
-    public class Admin : Person
-    {
-    }
-    public class Employee : Person
-    {
-    }
-    public class Client : Person
-    {
     }
 
 }

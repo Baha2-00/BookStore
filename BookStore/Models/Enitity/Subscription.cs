@@ -13,6 +13,6 @@ namespace BookStore.Models.Enitity
         public SubscriptionType SubscriptionType { get; set; }
         public bool IsActive { get; set; }
         public virtual List<Person> Client { get; set; }
-        public virtual List<Person> Contents { get; set;}
+        public virtual List<Content> Contents { get; set;}
     }
 }

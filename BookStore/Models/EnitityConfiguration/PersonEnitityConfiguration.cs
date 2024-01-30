@@ -1,6 +1,7 @@
 ﻿using BookStore.Models.Enitity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using static BookStore.Helper.Enums.Enums;
 
 namespace BookStore.Models.EnitityConfiguration
 {
@@ -20,6 +21,9 @@ namespace BookStore.Models.EnitityConfiguration
             builder.ToTable(x => x.HasCheckConstraint("CH_Person_Email", "EMAIL LIKE '%@______%.COM'"));
             builder.Property(x=>x.Gender).IsRequired();
             builder.Property(x=>x.IsActive).HasDefaultValue(true);
+
+            builder.HasOne<Content>(x =>x.Content)
+                .WithMany("Client").OnDelete(DeleteBehavior.Restrict); ;
 
         }
     }

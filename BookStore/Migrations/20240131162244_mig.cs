@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookStore.Migrations
 {
     /// <inheritdoc />
-    public partial class mig1 : Migration
+    public partial class mig : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,13 +17,11 @@ namespace BookStore.Migrations
                 {
                     DepartmentId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ArabicName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    EnglishName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    EnglishName = table.Column<int>(type: "int", nullable: false),
+                    ArabicName = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
                     ContactEmail = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DepartmentNameEN = table.Column<int>(type: "int", nullable: false),
-                    DepartmentNameAr = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
                 },
                 constraints: table =>

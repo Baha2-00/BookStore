@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookStore.Migrations
 {
     /// <inheritdoc />
-    public partial class mig : Migration
+    public partial class mig1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,7 +22,8 @@ namespace BookStore.Migrations
                     Description = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
                     ContactEmail = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DepartmentType = table.Column<int>(type: "int", nullable: false),
+                    DepartmentNameEN = table.Column<int>(type: "int", nullable: false),
+                    DepartmentNameAr = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
                 },
                 constraints: table =>
@@ -62,6 +63,7 @@ namespace BookStore.Migrations
                     Name = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Price = table.Column<float>(type: "real", nullable: false),
                     DatePublished = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ContentType = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
@@ -72,7 +74,7 @@ namespace BookStore.Migrations
                     table.PrimaryKey("PK_Content", x => x.ContentId);
                     table.CheckConstraint("CH_Content_Author", "Author>=5");
                     table.CheckConstraint("CH_Content_Description", "Description>=10");
-                    table.CheckConstraint("CH_Content_Name", "Name>=3");
+                    table.CheckConstraint("CH_Content_Price", "Price>=4");
                     table.ForeignKey(
                         name: "FK_Content_Subscription_subscriptionId",
                         column: x => x.subscriptionId,

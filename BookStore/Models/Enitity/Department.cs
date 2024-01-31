@@ -10,7 +10,8 @@ namespace BookStore.Models.Enitity
         public string Description { get; set; }
         public string ContactEmail { get; set; }
         public string PhoneNumber { get; set; }
-        public DepartmentType DepartmentType { get; set; }
+        public DepartmentNameEN DepartmentNameEN { get; set; }
+        public DepartmentNameAR DepartmentNameAr { get; set; }
         public bool IsActive { get; set; }
         public virtual List<Person> Employees { get; set; }
     }

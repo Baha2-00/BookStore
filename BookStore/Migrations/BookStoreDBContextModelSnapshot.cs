@@ -54,6 +54,9 @@ namespace BookStore.Migrations
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
+
                     b.Property<int>("subscriptionId")
                         .HasColumnType("int");
 
@@ -67,7 +70,7 @@ namespace BookStore.Migrations
 
                             t.HasCheckConstraint("CH_Content_Description", "Description>=10");
 
-                            t.HasCheckConstraint("CH_Content_Name", "Name>=3");
+                            t.HasCheckConstraint("CH_Content_Price", "Price>=4");
                         });
                 });
 
@@ -88,7 +91,10 @@ namespace BookStore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("DepartmentType")
+                    b.Property<int>("DepartmentNameAr")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DepartmentNameEN")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")

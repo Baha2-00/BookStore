@@ -16,12 +16,17 @@
             Comic = 4,
             Poetry = 5
         }
-        public enum DepartmentType
+        public enum DepartmentNameEN
         {
             Sales = 1,
-            مبيعات=2,
-            Marketing = 3,
-            CustomerService = 4,
+            Marketing = 2,
+            CustomerService = 3,
+        }
+        public enum DepartmentNameAR
+        {
+            المبيعات=1,
+            التسويق=2,
+            خدمةالعملاء = 3,
         }
         public enum SubscriptionType
         {

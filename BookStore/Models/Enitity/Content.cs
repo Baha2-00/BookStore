@@ -8,6 +8,7 @@ namespace BookStore.Models.Enitity
         public string Name { get; set; }
         public string Description { get; set; }
         public string Author { get; set; }
+        public float Price { get; set; }
         public DateTime DatePublished { get; set; }
         public ContentType ContentType { get; set; }
         public bool IsActive { get; set; }
